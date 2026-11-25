@@ -29,8 +29,8 @@ inline void macro_lift() {
             }
             
             liftError = liftTarget - lift_rotation.get_position();
-            if ((liftTarget - lift_rotation.get_position()) < -100) {
-                lift.move(-100);
+            if ((liftTarget - lift_rotation.get_position()) < -80) {
+                lift.move(-80);
             }
             lift.move(liftError * liftkP);
         }

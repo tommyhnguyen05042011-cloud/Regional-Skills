@@ -29,7 +29,7 @@ inline void macro_lift() {
             }
             
             liftError = liftTarget - lift_rotation.get_position();
-            if ((liftTarget - lift_rotation.get_position()) < -80) {
+            if ((liftTarget - lift_rotation.get_position()) < -80) { // capping negative power to -80 volts
                 lift.move(-80);
             }
             lift.move(liftError * liftkP);
@@ -44,7 +44,7 @@ inline void macro_toggleIntake() {
             intake.move(127);
         } else if (master.get_digital(pros::E_CONTROLLER_DIGITAL_L2)) {
             intake.move(-127);
-        } else {
+        } else { // auto toggle only works when driver doesnt control
             if (optical.get_proximity() > 240) {
                 if (toggleRed == true) {
                     if (optical.get_hue() > 20) {

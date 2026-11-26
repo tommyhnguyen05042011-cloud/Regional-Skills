@@ -17,15 +17,15 @@ inline void macro_lift() {
 	while (true) {
         if (!manual) {
             if (level == 0) {
-                liftTarget = -200;
+                liftTarget = -2000;
             } else if (level == 1) {
                 liftTarget = 27000;
             } else if (level == 2) {
                 liftTarget = 48000;
             } else if (level == 3) {
-                liftTarget = 73000;
+                liftTarget = 77000;
             } else if (level == 4) {
-                liftTarget = 98000;
+                liftTarget = 102000;
             }
             
             liftError = liftTarget - lift_rotation.get_position();

@@ -74,6 +74,10 @@ inline pros::Motor claw(-20);
 inline pros::Rotation lift_rotation(10);
 inline pros::Optical optical(17);
 
+inline pros::ADIDigitalOut flipper('A');
+
+inline pros::Controller master(pros::E_CONTROLLER_MASTER);
+
 // distance sensors
 inline pros::Distance right_dist(14);
 inline pros::Distance front_dist(15);
@@ -100,7 +104,3 @@ inline Circle_Obstacle loader_redRight(-68.13, -58.8, 3.74);
 inline Circle_Obstacle loader_redLeft(-68.13, 58.8, 3.74);
 inline Circle_Obstacle loader_blueRight(68.13, 58.8, 3.74);
 inline Circle_Obstacle loader_blueLeft(68.13, -58.8, 3.74);
-
-inline pros::ADIDigitalOut flipper('A');
-
-inline pros::Controller master(pros::E_CONTROLLER_MASTER);

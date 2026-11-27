@@ -31,8 +31,9 @@ inline void macro_lift() {
             liftError = liftTarget - lift_rotation.get_position();
             if ((liftTarget - lift_rotation.get_position()) < -80) { // capping negative power to -80 volts
                 lift.move(-80);
+            } else {
+                lift.move(liftError * liftkP);
             }
-            lift.move(liftError * liftkP);
         }
 		pros::delay(20);
 	}
@@ -73,8 +74,9 @@ inline void lift_auto() {
         liftError = liftTarget - lift_rotation.get_position();
         if ((liftError * liftkP) < -80) {
             lift.move(-80);
+        } else {
+            lift.move(liftError * liftkP);
         }
-        lift.move(liftError * liftkP);
         pros::delay(20);
     }
 }

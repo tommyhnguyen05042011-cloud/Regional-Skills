@@ -89,9 +89,9 @@ void autonomous() {
 	RclMain.updateBotPose(&left_rcl);
 	delay(400);
 	liftTarget = 38000;
-	chassis.moveToPoint(-21.5, -27.5, 500, {.forwards = false});
+	chassis.moveToPoint(-21.5, -27, 500, {.forwards = false});
 	chassis.turnToHeading(90, 1000, {.maxSpeed = 50});
-	chassis.moveToPose(-46, -27.5, 90, 1500, {.forwards = false});
+	chassis.moveToPose(-46, -27, 90, 1500, {.forwards = false});
 	chassis.waitUntilDone();
 	liftTarget = 21000;
 	delay(500);
@@ -136,7 +136,7 @@ void autonomous() {
 	chassis.turnToHeading(90, 500, {.maxSpeed = 90});
 	claw.move(127);
 	chassis.moveToPoint(-62, -58.5, 2000, {.forwards = false, .maxSpeed = 40});
-	chassis.moveToPoint(-47, -47, 1200, {.maxSpeed = 50});
+	chassis.moveToPoint(-47, -47, 1200, {.maxSpeed = 60});
 	delay(300);
 	liftTarget = 24000;
 	chassis.turnToHeading(270, 1500, {.maxSpeed = 60});

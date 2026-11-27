@@ -17,7 +17,7 @@ inline void macro_lift() {
 	while (true) {
         if (!manual) {
             if (level == 0) {
-                liftTarget = -2000;
+                liftTarget = -5000;
             } else if (level == 1) {
                 liftTarget = 37000;
             } else if (level == 2) {

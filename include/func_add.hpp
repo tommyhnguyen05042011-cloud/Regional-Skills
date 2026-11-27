@@ -71,6 +71,9 @@ inline void macro_toggleIntake() {
 inline void lift_auto() {
     while (true) {
         liftError = liftTarget - lift_rotation.get_position();
+        if ((liftError * liftkP) < -80) {
+            lift.move(-80);
+        }
         lift.move(liftError * liftkP);
         pros::delay(20);
     }

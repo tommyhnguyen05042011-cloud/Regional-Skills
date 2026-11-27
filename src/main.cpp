@@ -119,7 +119,7 @@ void autonomous() {
 	chassis.moveToPose(-50, -25, 180, 1200, {.forwards = false});
 	chassis.waitUntilDone();
 	chassis.tank(-30, -30);
-	liftTarget = 50000;
+	liftTarget = 45000;
 	delay(300);
 	claw.move(-127);
 	RclMain.setRclPose(Pose(-47, -31));

@@ -91,7 +91,7 @@ void autonomous() {
 	liftTarget = 38000;
 	chassis.moveToPoint(-21.5, -27, 500, {.forwards = false});
 	chassis.turnToHeading(90, 1000, {.maxSpeed = 50});
-	chassis.moveToPose(-46, -27, 90, 1500, {.forwards = false});
+	chassis.moveToPose(-41, -27, 90, 1500, {.forwards = false});
 	chassis.waitUntilDone();
 	liftTarget = 21000;
 	delay(500);
@@ -106,7 +106,7 @@ void autonomous() {
 	chassis.moveToPoint(-23.5, -23.5, 800);
 	chassis.turnToHeading(45, 800);
 	liftTarget = -2000;
-	chassis.moveToPoint(-46, -46, 2800, {.forwards = false, .maxSpeed = 30});
+	chassis.moveToPoint(-46, -45, 2800, {.forwards = false, .maxSpeed = 30});
 	claw.move(127);
 	chassis.waitUntilDone();
 	RclMain.updateBotPose(&left_rcl);
@@ -114,9 +114,9 @@ void autonomous() {
 	delay(800);
 	liftTarget = 70000;
 	delay(500);
-	chassis.moveToPoint(-49.5, -47.5, 800, {.forwards = false});
+	chassis.moveToPoint(-50, -47.5, 800, {.forwards = false});
 	chassis.turnToHeading(180, 1000, {.maxSpeed = 40});
-	chassis.moveToPose(-49.5, -25, 180, 1200, {.forwards = false});
+	chassis.moveToPose(-50, -25, 180, 1200, {.forwards = false});
 	chassis.waitUntilDone();
 	chassis.tank(-30, -30);
 	liftTarget = 50000;
@@ -136,11 +136,11 @@ void autonomous() {
 	chassis.turnToHeading(90, 500, {.maxSpeed = 90});
 	claw.move(127);
 	chassis.moveToPoint(-62, -58.5, 2000, {.forwards = false, .maxSpeed = 40});
-	chassis.moveToPoint(-47, -47, 1200, {.maxSpeed = 60});
+	chassis.moveToPoint(-47, -46.5, 1200, {.maxSpeed = 60});
 	delay(300);
 	liftTarget = 24000;
 	chassis.turnToHeading(270, 1500, {.maxSpeed = 60});
-	chassis.moveToPoint(-31, -47, 1300, {.forwards = false, .maxSpeed = 50});
+	chassis.moveToPoint(-32, -46.5, 1300, {.forwards = false, .maxSpeed = 50});
 	chassis.waitUntilDone();
 	RclMain.setRclPose(Pose(-31, -47));
 	RclMain.updateBotPose(&left_rcl);

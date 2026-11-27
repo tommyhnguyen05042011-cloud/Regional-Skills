@@ -19,13 +19,13 @@ inline void macro_lift() {
             if (level == 0) {
                 liftTarget = -2000;
             } else if (level == 1) {
-                liftTarget = 27000;
+                liftTarget = 37000;
             } else if (level == 2) {
-                liftTarget = 48000;
+                liftTarget = 59000;
             } else if (level == 3) {
-                liftTarget = 77000;
+                liftTarget = 81000;
             } else if (level == 4) {
-                liftTarget = 102000;
+                liftTarget = 113000;
             }
             
             liftError = liftTarget - lift_rotation.get_position();

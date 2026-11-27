@@ -81,7 +81,7 @@ void autonomous() {
 	// stack #1 -> goal #1
 	chassis.turnToPoint(-27, -21.5, 400, {.forwards = false});
 	claw.move(127);
-	chassis.moveToPoint(-27, -21.5, 100, {.forwards = false, .maxSpeed = 70});
+	chassis.moveToPoint(-27, -21.5, 200, {.forwards = false, .maxSpeed = 70});
 	chassis.moveToPoint(-27, -21.5, 2000, {.forwards = false, .maxSpeed = 30});
 	RclMain.updateBotPose(&left_rcl);
 	chassis.waitUntilDone();
@@ -119,7 +119,7 @@ void autonomous() {
 	chassis.moveToPose(-49.5, -25, 180, 1200, {.forwards = false});
 	chassis.waitUntilDone();
 	chassis.tank(-30, -30);
-	liftTarget = 47000;
+	liftTarget = 55000;
 	delay(300);
 	claw.move(-127);
 	RclMain.setRclPose(Pose(-47, -31));
@@ -140,7 +140,7 @@ void autonomous() {
 	delay(300);
 	liftTarget = 24000;
 	chassis.turnToHeading(270, 1500, {.maxSpeed = 60});
-	chassis.moveToPoint(-31, -47, 1300, {.forwards = false, .maxSpeed = 70});
+	chassis.moveToPoint(-31, -47, 1300, {.forwards = false, .maxSpeed = 50});
 	chassis.waitUntilDone();
 	RclMain.setRclPose(Pose(-31, -47));
 	RclMain.updateBotPose(&left_rcl);

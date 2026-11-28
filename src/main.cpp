@@ -63,7 +63,7 @@ void autonomous() {
 	chassis.turnToPoint(-47, -20, 700, {.forwards = false, .maxSpeed = 70});
 	RclMain.updateBotPose(&left_rcl);
 	RclMain.updateBotPose(&front_rcl);
-	chassis.moveToPoint(-47, -17, 1300, {.forwards = false, .maxSpeed = 80});
+	chassis.moveToPoint(-47, -17.5, 1300, {.forwards = false, .maxSpeed = 80});
 	chassis.waitUntilDone();
 	RclMain.updateBotPose(&left_rcl);
 	RclMain.startAccumulating();
@@ -89,9 +89,9 @@ void autonomous() {
 	RclMain.updateBotPose(&left_rcl);
 	delay(400);
 	liftTarget = 38000;
-	chassis.moveToPoint(-21.5, -27, 500, {.forwards = false});
+	chassis.moveToPoint(-21.5, -26.5, 500, {.forwards = false});
 	chassis.turnToHeading(90, 1000, {.maxSpeed = 50});
-	chassis.moveToPose(-42.5, -27, 90, 1500, {.forwards = false});
+	chassis.moveToPose(-42.5, -26.5, 90, 1500, {.forwards = false});
 	chassis.waitUntilDone();
 	liftTarget = 21000;
 	delay(500);
@@ -126,7 +126,7 @@ void autonomous() {
 	RclMain.updateBotPose(&right_rcl);
 	RclMain.updateBotPose(&front_rcl);
 	RclMain.startAccumulating();
-	delay(800);
+	delay(500);
 
 	// matchload pin -> goal #2
 	chassis.moveToPoint(-47, -58.5, 1000, {.maxSpeed = 70});

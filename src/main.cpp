@@ -79,10 +79,10 @@ void autonomous() {
 	RclMain.updateBotPose(&left_rcl);
 
 	// stack #1 -> goal #1
-	chassis.turnToPoint(-27, -21.5, 400, {.forwards = false});
+	chassis.turnToPoint(-26, -22.5, 400, {.forwards = false});
 	claw.move(127);
-	chassis.moveToPoint(-27, -21.5, 200, {.forwards = false, .maxSpeed = 70});
-	chassis.moveToPoint(-27, -21.5, 2000, {.forwards = false, .maxSpeed = 30});
+	chassis.moveToPoint(-26, -22.5, 300, {.forwards = false, .maxSpeed = 70});
+	chassis.moveToPoint(-26, -22.5, 2000, {.forwards = false, .maxSpeed = 30});
 	RclMain.updateBotPose(&left_rcl);
 	chassis.waitUntilDone();
 	RclMain.updateBotPose(&front_rcl);

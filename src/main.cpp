@@ -59,12 +59,13 @@ void autonomous() {
 	RclMain.stopAccumulating();
 
 	// preload -> goal #1
-	chassis.moveToPoint(-50, 0, 700, {.forwards = false, .maxSpeed = 80});
-	chassis.turnToPoint(-47, -20, 700, {.forwards = false, .maxSpeed = 70});
+	chassis.moveToPoint(-50, 0, 600, {.forwards = false, .maxSpeed = 80});
+	chassis.turnToPoint(-47, -20, 500, {.forwards = false, .maxSpeed = 70});
 	RclMain.updateBotPose(&left_rcl);
 	RclMain.updateBotPose(&front_rcl);
-	chassis.moveToPoint(-47, -17.5, 1300, {.forwards = false, .maxSpeed = 80});
+	chassis.moveToPoint(-47, -17.5, 1100, {.forwards = false, .maxSpeed = 80});
 	chassis.waitUntilDone();
+	RclMain.setRclPose(Pose(-47, -16));
 	RclMain.updateBotPose(&left_rcl);
 	RclMain.startAccumulating();
 	delay(300);
@@ -74,12 +75,12 @@ void autonomous() {
 	delay(200);
 	RclMain.stopAccumulating();
 	chassis.cancelMotion();
-	chassis.moveToPoint(-47, 0, 800, {.maxSpeed = 100});
+	chassis.moveToPoint(-47, 0, 700, {.maxSpeed = 100});
 	chassis.waitUntilDone();
 	RclMain.updateBotPose(&left_rcl);
 
 	// stack #1 -> goal #1
-	chassis.turnToPoint(-26, -22.5, 400, {.forwards = false});
+	chassis.turnToPoint(-26, -22.5, 300, {.forwards = false});
 	claw.move(127);
 	chassis.moveToPoint(-26, -22.5, 500, {.forwards = false, .maxSpeed = 70});
 	chassis.moveToPoint(-26, -22.5, 2000, {.forwards = false, .maxSpeed = 30});
@@ -106,7 +107,8 @@ void autonomous() {
 	chassis.moveToPoint(-23.5, -23.5, 800);
 	chassis.turnToPoint(-45, -44.5, 800, {.forwards = false});
 	liftTarget = -5000;
-	chassis.moveToPoint(-45, -44.5, 2800, {.forwards = false, .maxSpeed = 30});
+	chassis.moveToPoint(-45, -44.5, 500, {.forwards = false, .maxSpeed = 70});
+	chassis.moveToPoint(-45, -44.5, 1700, {.forwards = false, .maxSpeed = 30});
 	claw.move(127);
 	chassis.waitUntilDone();
 	RclMain.updateBotPose(&left_rcl);
@@ -129,14 +131,14 @@ void autonomous() {
 	delay(500);
 
 	// matchload pin -> goal #2
-	chassis.moveToPoint(-47, -58.5, 1000, {.maxSpeed = 70});
+	chassis.moveToPoint(-47, -58, 1000, {.maxSpeed = 70});
 	delay(100);
 	liftTarget = -2000;
 	chassis.turnToHeading(90, 500, {.maxSpeed = 90});
 	claw.move(127);
-	chassis.moveToPoint(-62, -58.5, 2000, {.forwards = false, .maxSpeed = 40});
+	chassis.moveToPoint(-62, -58, 2000, {.forwards = false, .maxSpeed = 40});
 	chassis.moveToPoint(-47, -46, 1200, {.maxSpeed = 60});
-	delay(300);
+	delay(400);
 	liftTarget = 24000;
 	chassis.turnToHeading(270, 1500, {.maxSpeed = 60});
 	chassis.moveToPoint(-32, -46, 1300, {.forwards = false, .maxSpeed = 50});
@@ -173,11 +175,11 @@ void autonomous() {
 	// claw.move(127);
 	// liftTarget = -2000;
 	// chassis.moveToPoint(-62, -58.5, 1500, {.forwards = false, .maxSpeed = 40});
-	// chassis.moveToPoint(-47, -47, 1200, {.maxSpeed = 50});
+	// chassis.moveToPoint(-47, -47.5, 1200, {.maxSpeed = 50});
 	// delay(300);
 	// liftTarget = 70000;
 	// chassis.turnToHeading(270, 1500, {.maxSpeed = 60});
-	// chassis.moveToPoint(-31, -47, 1300, {.forwards = false, .maxSpeed = 70});
+	// chassis.moveToPoint(-31, -47.5, 1300, {.forwards = false, .maxSpeed = 70});
 	// chassis.waitUntilDone();
 	// RclMain.setRclPose(Pose(-31, -47));
 	// RclMain.updateBotPose(&left_rcl);
@@ -192,11 +194,11 @@ void autonomous() {
 	// claw.move(127);
 	// liftTarget = -2000;
 	// chassis.moveToPoint(-62, -58.5, 1500, {.forwards = false, .maxSpeed = 40});
-	// chassis.moveToPoint(-47, -47, 1200, {.maxSpeed = 50});
+	// chassis.moveToPoint(-47, -47.5, 1200, {.maxSpeed = 50});
 	// delay(300);
 	// liftTarget = 100000;
 	// chassis.turnToHeading(270, 1500, {.maxSpeed = 60});
-	// chassis.moveToPoint(-31, -47, 1300, {.forwards = false, .maxSpeed = 70});
+	// chassis.moveToPoint(-31, -47.5, 1300, {.forwards = false, .maxSpeed = 70});
 	// chassis.waitUntilDone();
 	// RclMain.setRclPose(Pose(-31, -47));
 	// RclMain.updateBotPose(&left_rcl);
